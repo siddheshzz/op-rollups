@@ -81,7 +81,11 @@ Steps:
 8. Deploy the L1 contract
     ```
        forge script scripts/Deploy.s.sol:Deploy --private-key $GS_ADMIN_PRIVATE_KEY --broadcast --rpc-url $L1_RPC_URL --slow
-    ```    
+    ```
+9. Generating genesis via op-deployer
+        ```
+           op-deployer --cache-dir false apply --workdir .deployer --l1-rpc-url $L1_RPC_URL --private-key $GS_ADMIN_PRIVATE_KEY
+       ```
    
  
 
