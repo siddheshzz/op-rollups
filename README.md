@@ -68,6 +68,7 @@ Steps:
      direnv: export +DEPLOYMENT_CONTEXT +ETHERSCAN_API_KEY +GS_ADMIN_ADDRESS +GS_ADMIN_PRIVATE_KEY +GS_BATCHER_ADDRESS +GS_BATCHER_PRIVATE_KEY +GS_PROPOSER_ADDRESS +GS_PROPOSER_PRIVATE_KEY +GS_SEQUENCER_ADDRESS +GS_SEQUENCER_PRIVATE_KEY +IMPL_SALT +L1_RPC_KIND +L1_RPC_URL +PRIVATE_KEY +TENDERLY_PROJECT +TENDERLY_USERNAME
      ```
 6. Configure your network
+   
      ```
      cd ~/optimism
      cd packages/contracts-bedrock
@@ -75,7 +76,14 @@ Steps:
      forge install
 
      ./scripts/getting-started/config.sh
+     
      ```
+8. Deploy the L1 contract
+    ```
+       forge script scripts/Deploy.s.sol:Deploy --private-key $GS_ADMIN_PRIVATE_KEY --broadcast --rpc-url $L1_RPC_URL --slow
+    ```    
+   
+ 
 
 
 ```cast send <TO ADDRESS> --value 2 --private-key [FROM_PK] --rpc-url http://127.0.0.1:8545```
