@@ -85,6 +85,9 @@ Steps:
 9. Generating genesis via op-deployer
         ```
            op-deployer --cache-dir false apply --workdir .deployer --l1-rpc-url $L1_RPC_URL --private-key $GS_ADMIN_PRIVATE_KEY
+
+           op-deployer inspect genesis --workdir .deployer 901 > .deployer/genesis.json
+           op-deployer inspect rollup --workdir .deployer 901 > .deployer/rollup.json
        ```
    
  
